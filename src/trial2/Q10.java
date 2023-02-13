@@ -1,5 +1,7 @@
 package trial2;
 
+import java.util.Arrays;
+
 /*
  *15. Array - Run Length Decoding
 For a given string, which has character and the number of times the character appeared, decode
@@ -143,12 +145,21 @@ Output: 90
     	  }
     	  return smax;
       }
+      public static int[] dailyTemperatures(int[] T) {
+          int[] result = new int[T.length];
+          for (int day = T.length - 1; day >= 0; day--)
+              for (int i = day - 1; i >= 0 && T[i] < T[day]; i--)  
+                  result[i] = day - i;
+          return result;
+      }
 	public static void main(String[] args) {
+		int a[]= {73,74,75,71,69,72,76,73};
+		System.out.println(Arrays.toString(dailyTemperatures(a)));
 		///System.out.println(decodin("a10br3a3"));
 		//System.out.println(merge("Hello", "123"));
 //		String s="Break";
 //		splitrev(s.toCharArray());
-		int a[]= {1,1,1};
+		//int a[]= {1,1,1};
 		System.out.println(max2(a));
 	}
 
